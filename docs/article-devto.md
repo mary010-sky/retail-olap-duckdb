@@ -56,6 +56,8 @@ La vista `sales` une las tablas y calcula `revenue` con un tipo decimal. Todos l
 
 El generador SQL usa operaciones aritméticas sobre `generate_series(1,100000)`. Así produce los mismos datos al recargar. Esto facilita comparar resultados, aunque crea patrones artificiales que impiden interpretar los datos como evidencia de un mercado real.
 
+Los cálculos conservan tipos decimales en el modelo. Al devolver los agregados a JavaScript, la aplicación convierte las columnas monetarias a `DOUBLE` en la proyección SQL para evitar que la representación decimal de Arrow se muestre como un entero escalado. Esta conversión se aplica a la presentación; las pruebas contrastan el total decimal exacto con un cálculo independiente en centavos.
+
 ```sql
 CREATE VIEW sales AS
 SELECT f.*, r.region, p.category, d.year, d.quarter, d.month,
@@ -126,6 +128,8 @@ Las agregaciones mensuales y por mercado deben sumar lo mismo que el total gener
 
 Estas pruebas verifican la semántica del modelo. Como Python y WebAssembly son distribuciones diferentes, también hace falta abrir la aplicación y comprobar que el motor carga y que los filtros y las consultas responden. El tiempo mostrado en pantalla incluye comunicación y trabajo del navegador; no representa un benchmark del motor.
 
+La validación del conjunto completo produjo **100.000 filas, 24 meses, cinco mercados e ingresos de USD 76.263.950,00**. El cálculo independiente obtuvo 7.626.395.000 centavos. Son resultados del ejemplo sintético, no cifras comerciales reales.
+
 ## 7. Automatizar el despliegue público
 
 El workflow `.github/workflows/pages.yml` se activa al hacer push a `main`. Instala DuckDB para las pruebas, valida el modelo y la sintaxis JavaScript, conserva la evidencia y publica solamente `dist/`.
@@ -142,4 +146,9 @@ Para un conjunto mayor o una aplicación compartida, evaluaría archivos columna
 
 **Autora: Marymar Danytza Calloticona Chambilla.**
 
-El repositorio, la aplicación y las evidencias de despliegue se añadirán aquí una vez verificados sus enlaces públicos.
+- [Repositorio público y código completo](https://github.com/mary010-sky/retail-olap-duckdb)
+- [Aplicación pública](https://mary010-sky.github.io/retail-olap-duckdb/)
+- [Historial de validación y despliegue automático](https://github.com/mary010-sky/retail-olap-duckdb/actions/workflows/pages.yml)
+- [Primera ejecución con despliegue exitoso, intento 2](https://github.com/mary010-sky/retail-olap-duckdb/actions/runs/43617520351)
+
+El artículo y la construcción de la aplicación se prepararon con asistencia de IA y comprobaciones de ejecución.
