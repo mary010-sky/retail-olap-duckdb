@@ -6,19 +6,19 @@ import duckdb
 
 db = duckdb.connect()
 db.execute(Path('dist/model.sql').read_text(encoding='utf-8'))
-assert db.sql('SELECT count(*) FROM fact_sales').fetchone()[0] == 100000
-assert db.sql('SELECT count(*) FROM sales').fetchone()[0] == 100000
-assert db.sql('SELECT count(DISTINCT sale_id) FROM sales').fetchone()[0] == 100000
-assert db.sql('SELECT count(*) FROM dim_date').fetchone()[0] == 731
-assert db.sql('SELECT min(sale_date),max(sale_date) FROM sales').fetchone() == (__import__('datetime').date(2024,1,1),__import__('datetime').date(2025,12,31))
+assert db.sql('SELECT count(*) FROM fact_sales').fetchall()[0][0] == 100000
+assert db.sql('SELECT count(*) FROM sales').fetchall()[0][0] == 100000
+assert db.sql('SELECT count(DISTINCT sale_id) FROM sales').fetchall()[0][0] == 100000
+assert db.sql('SELECT count(*) FROM dim_date').fetchall()[0][0] == 731
+assert db.sql('SELECT min(sale_date),max(sale_date) FROM sales').fetchall()[0] == (__import__('datetime').date(2024,1,1),__import__('datetime').date(2025,12,31))
 expected = sum((1+(n//20)%5)*(1000+(n*37)%49000) for n in range(1,100001))
-total = db.sql('SELECT sum(revenue) FROM sales').fetchone()[0]
+total = db.sql('SELECT sum(revenue) FROM sales').fetchall()[0][0]
 assert total == Decimal(expected)/100
 markets = db.sql('SELECT region,sum(revenue) FROM sales GROUP BY region').fetchall()
 assert len(markets) == 5 and sum(r[1] for r in markets) == total
 monthly = db.sql('SELECT year,month,sum(revenue) FROM sales GROUP BY year,month').fetchall()
 assert len(monthly) == 24 and sum(r[2] for r in monthly) == total
-assert db.sql("SELECT count(*) FROM sales WHERE region='Peru' AND year=2025").fetchone()[0] > 0
+assert db.sql("SELECT count(*) FROM sales WHERE region='Peru' AND year=2025").fetchall()[0][0] > 0
 rollup = db.sql('SELECT region,sum(revenue) FROM sales GROUP BY ROLLUP(region)').fetchall()
 assert len(rollup) == 6 and next(r[1] for r in rollup if r[0] is None) == total
 pivot = db.sql('SELECT category,sum(CASE WHEN year=2024 THEN revenue ELSE 0 END),sum(CASE WHEN year=2025 THEN revenue ELSE 0 END) FROM sales GROUP BY category').fetchall()

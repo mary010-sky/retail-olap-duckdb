@@ -7,7 +7,7 @@ CREATE TABLE dim_date AS SELECT CAST(d AS DATE) AS sale_date,
  year(d) AS year, quarter(d) AS quarter, month(d) AS month
  FROM generate_series(DATE '2024-01-01',DATE '2025-12-31',INTERVAL 1 DAY) t(d);
 CREATE TABLE fact_sales AS
- SELECT n AS sale_id, DATE '2024-01-01' + CAST((n * 17) % 731 AS INTEGER) AS sale_date,
+ SELECT n AS sale_id, DATE '2024-01-01' + CAST((n * 19) % 731 AS INTEGER) AS sale_date,
  CAST((n * 7) % 5 AS INTEGER) AS region_id,
  CAST((n // 5) % 4 AS INTEGER) AS product_id,
  CAST(1 + (n // 20) % 5 AS INTEGER) AS quantity,

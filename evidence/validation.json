@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "duckdb_version": "2.0.0",
+  "sales_rows": 100000,
+  "date_rows": 731,
+  "months": 24,
+  "markets": 5,
+  "revenue_usd": "76263950.00",
+  "independent_expected_cents": 7626395000,
+  "checks": [
+    "grain",
+    "unique identifiers",
+    "join cardinality",
+    "calendar coverage",
+    "exact revenue",
+    "market reconciliation",
+    "monthly reconciliation",
+    "slice",
+    "rollup",
+    "pivot",
+    "ranking"
+  ]
+}
