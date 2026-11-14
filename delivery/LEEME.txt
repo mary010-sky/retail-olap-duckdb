@@ -1,0 +1,14 @@
+Estado verificado el 14 de noviembre de 2026:
+- Repositorio publico creado y codigo subido.
+- Aplicacion publica en GitHub Pages.
+- Validacion y despliegue ejecutados correctamente con GitHub Actions.
+- Articulo publicado en DEV.to con el nombre completo de Marymar.
+- Prueba real del navegador: total USD 76,263,950.00; 100,000 ventas; filtros, drill-down, roll-up, pivot, ranking y CSV comprobados.
+
+Pendientes a cargo de Marymar, segun su indicacion:
+1. Grabar y publicar un video de la construccion, con duracion maxima de cinco minutos. Guion sugerido en docs/video-script.md del repositorio.
+2. Agregar la URL publica del video a ENLACES.txt y links.json; volver a comprimir estos archivos.
+3. Enviar los enlaces del articulo y del video al grupo de Telegram.
+4. Subir el ZIP actualizado en la tarea correspondiente.
+
+No se ha realizado una entrega en el aula virtual ni un envio a Telegram.

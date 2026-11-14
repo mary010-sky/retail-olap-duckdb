@@ -2,6 +2,10 @@
 
 **Autora: Marymar Danytza Calloticona Chambilla**
 
+[Public application](https://mary010-sky.github.io/retail-olap-duckdb/) · [Published DEV.to article](https://dev.to/marymar_danytzacallotico/construi-una-solucion-olap-con-duckdb-en-el-navegador-y-despliegue-automatico-5h20) · [Successful application deployment](https://github.com/mary010-sky/retail-olap-duckdb/actions/runs/43618617969)
+
+Verified: 100,000 rows, 24 months and total revenue **USD 76,263,950.00**. Video recording/publication and Telegram delivery will be completed by Marymar. The final submission remains incomplete until the public video URL is added.
+
 An interactive OLAP solution with 100,000 reproducible synthetic sales, a star schema, exact decimal revenue, market/year filters, monthly drill-down, market roll-up, category/year pivot, ranking and CSV export.
 
 ## Architecture

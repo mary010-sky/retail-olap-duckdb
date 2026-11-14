@@ -1,0 +1,22 @@
+SOLUCION OLAP — DUCKDB
+Autora: Marymar Danytza Calloticona Chambilla
+
+ARTICULO PUBLICADO EN DEV.TO:
+https://dev.to/marymar_danytzacallotico/construi-una-solucion-olap-con-duckdb-en-el-navegador-y-despliegue-automatico-5h20
+
+REPOSITORIO PUBLICO:
+https://github.com/mary010-sky/retail-olap-duckdb
+
+APLICACION PUBLICA:
+https://mary010-sky.github.io/retail-olap-duckdb/
+
+DESPLIEGUE AUTOMATIZADO EXITOSO:
+https://github.com/mary010-sky/retail-olap-duckdb/actions/runs/43618617969
+
+VIDEO PUBLICO (MAXIMO 5 MINUTOS):
+PENDIENTE. Marymar grabara y publicara el video. Agregar aqui su URL publica.
+
+TELEGRAM:
+Pendiente de envio por Marymar con los enlaces del articulo y del video.
+
+IMPORTANTE: este ZIP todavia no contiene la URL del video. Completarla antes de la entrega final.

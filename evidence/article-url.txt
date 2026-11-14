@@ -1,0 +1,1 @@
+https://dev.to/marymar_danytzacallotico/construi-una-solucion-olap-con-duckdb-en-el-navegador-y-despliegue-automatico-5h20

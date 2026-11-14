@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-14",
+  "application": "https://mary010-sky.github.io/retail-olap-duckdb/",
+  "engine_status": "DuckDB is ready · 100,000 rows",
+  "total_revenue_display": "$76,263,950.00",
+  "sales_lines": 100000,
+  "average_line_value_display": "$762.64",
+  "peru_2025_revenue_display": "$7,612,026.15",
+  "peru_2025_sales_lines": 9986,
+  "monthly_drilldown": "12 months returned for Peru, 2025",
+  "rollup_total": 76263950,
+  "pivot": "4 categories, separate 2024 and 2025 columns",
+  "ranking": [
+    {"category":"Books","revenue":19068250,"rank":1},
+    {"category":"Electronics","revenue":19067770,"rank":2},
+    {"category":"Sports","revenue":19064740,"rank":3},
+    {"category":"Home","revenue":19063190,"rank":4}
+  ],
+  "csv": "Downloaded olap-results.csv from the public application",
+  "article_status": "Published, public URL without preview token",
+  "application_release": "53e9c5e9e2d11b21d2951e2cae1501f36db6df87"
+}

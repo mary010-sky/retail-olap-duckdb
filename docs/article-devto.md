@@ -1,6 +1,6 @@
 ---
 title: "Construí una solución OLAP con DuckDB en el navegador y despliegue automático"
-published: false
+published: true
 description: "Un laboratorio reproducible con 100.000 ventas, esquema estrella y SQL analítico, sin configurar servicios AWS."
 tags: duckdb, sql, analytics, webdev
 ---
